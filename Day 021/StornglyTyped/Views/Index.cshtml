@@ -1,0 +1,20 @@
+@model IEnumerable<StornglyTyped.Models.Class>;
+
+@{
+    ViewData["Title"] = "Home Page";  
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@{
+    foreach(var item in Model)
+    {
+        <h3>@item.ID</h3>
+        <h3>@item.Name</h3>
+        <h3>@item.Position</h3>
+        <h3>@item.Salary</h3>
+    }
+}
