@@ -1,0 +1,81 @@
+@model TagHelper_MyForm.Models.TripReservation
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">국내/외 항공 예약 서비스</h1>
+</div>
+
+<div class="container">
+
+    <label asp-for="Depart">출발지</label>
+    <select asp-for="Depart"
+            class="form-control"
+            asp-items="Html.GetEnumSelectList<Depart>()">
+        <option value="">출발지를 입력해 주세요.</option>
+    </select>
+    <br />
+    <label asp-for="Destination">도착지</label>
+    <select asp-for="Destination"
+            class="form-control"
+            asp-items="Html.GetEnumSelectList<Destination>()">
+        <option value="">도착지를 입력해 주세요.</option>
+    </select>
+    <br />
+
+    <div class="col-sm-14">
+        <form>
+            <label asp-for="Personnel"><h4>인원</h4></label>
+            <input asp-for="Personnel"
+                   placeholder="인원을 입력해 주세요"
+                   class="form-control" />
+        </form>
+    </div>
+    <br />
+    <div class="col-sm-14">
+        <form>
+            <label asp-for="Name"><h4>예약자명</h4></label>
+            <input asp-for="Name"
+                   placeholder="이름을 입력해 주세요."
+                   class="form-control" />
+        </form>
+    </div>
+    <br />
+    <div class="col-sm-14">
+        <form>
+            <label asp-for="HP"><h4>전화번호</h4></label>
+            <input asp-for="HP"
+                   placeholder="전화번호를 입력해 주세요."
+                   class="form-control" />
+        </form>
+    </div>
+    <br />
+    <label><h4>최근 2주간 Covid-19 감염 여부</h4></label>
+    <br />
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" asp-for="Covid" value="네" checked>
+        <label class="form-check-label" for="flexRadioDefault1">
+            O
+        </label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" asp-for="Covid" value="아니요" >
+        <label class="form-check-label" for="flexRadioDefault2">
+            X
+        </label>
+    </div>
+    <br />
+    <br />
+
+    <textarea asp-for="Request"
+              rows="5"
+              cols="60"
+              placeholder="기타 요청사항을 입력해 주세요.."
+              class="form-control">
+
+            </textarea>
+    <br />
+    <input type="submit" value="제출"
+           class="btn btn-outline-primary" />
+</div>
