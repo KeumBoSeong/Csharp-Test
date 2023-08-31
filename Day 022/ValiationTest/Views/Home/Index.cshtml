@@ -1,0 +1,29 @@
+@model Student
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Index page</h1>
+<div>
+    <form asp-controller="Home" asp-action="Index" method="post">
+
+        <!----------------------이름 작성란---------------------->
+        <label asp-for="Name">이름 : </label>
+        <input asp-for="Name" class="form-control" placeholder="이름을 넣어주세요." />
+        <span asp-validation-for="Name" style="color:red"></span>
+        <br />
+
+        <!----------------------나이 작성란---------------------->
+        <label asp-for="Age">나이 : </label>
+        <input asp-for="Age" class="form-control" placeholder="나이를 넣어주세요." />
+        <span asp-validation-for="Age" style="color:red"></span>
+        <br />
+        <!----------------------password 작성란---------------------->
+        <label asp-for="Password">비밀번호 : </label>
+        <input asp-for="Password" class="form-control" placeholder="패스워드를 작성해주세요." />
+        <span asp-validation-for="Password" style="color:red"></span>
+        <br />
+        <!----------------------button 작성란---------------------->
+        <input type="submit" value="ok" />
+    </form>
+</div>
